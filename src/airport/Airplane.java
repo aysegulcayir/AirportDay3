@@ -30,7 +30,10 @@ public class Airplane {
         System.out.println("500m is a avarage measurement for a plane");
     }
 
-
+    public String toString(){
+        return "planeId: " + this.getPlaneId() + "status: " + this.isCurrentlyFlying() +
+                " speed: " +this.getSpeed() +" capacity: ";
+    }
 
     //Getter Setter constructor
 

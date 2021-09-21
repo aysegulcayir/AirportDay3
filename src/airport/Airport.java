@@ -95,6 +95,7 @@ public class Airport {
     }
 
 
+
 //Getter and Setter Constructor
 
     public Airport(String name, List<PeoplePlane> airplanes, List<CargoPlane> cargoPlanes) {
