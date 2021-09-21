@@ -5,11 +5,13 @@ public class CargoPlane extends Airplane {
 
     public CargoPlane(String planeId, boolean isCurrentlyFlying, double speed) {
         super(planeId, isCurrentlyFlying, speed);
+        this.setType("CargoPlane");
     }
 
     public CargoPlane(String planeId, boolean isCurrentlyFlying, double speed, int capacity) {
         super(planeId, isCurrentlyFlying, speed);
         this.capacity = capacity;
+        this.setType("CargoPlane");
     }
 
     public int getCapacity() {

@@ -62,12 +62,14 @@ public class PeoplePlane extends Airplane{
 
     public PeoplePlane(String planeId, boolean isCurrentlyFlying, double speed) {
         super(planeId, isCurrentlyFlying, speed);
+        this.setType("PeoplePlane");
     }
 
     public PeoplePlane(String planeId,  boolean isCurrentlyFlying, double speed, int maxNumberOfPassenger, int currentNumberOfPassengers){
         super(planeId, isCurrentlyFlying, speed);
         this.maxNumberOfPassenger = maxNumberOfPassenger;
         this.currentNumberOfPassengers =currentNumberOfPassengers;
+        this.setType("PeoplePlane");
     }
 
 

@@ -11,7 +11,7 @@ public class Airport {
     private List<Airplane> planes;
 
 
-    public List<PeoplePlane> getAllAircraft() {
+    public List<PeoplePlane> getAllPeoplePlane() {
         System.out.println("Aircraft from airport " + this.getName() + " :");
         for (PeoplePlane airplane : airplanes) {
             System.out.println("Passenger Airplane: " + airplane.getPlaneId());
@@ -25,6 +25,22 @@ public class Airport {
             System.out.println("Cargo Airplane: " + cAirplane.getPlaneId());
         }
         return cargoPlanes;
+    }
+
+    public List<Airplane> typeOfPlane(String type) {
+        List<Airplane> planeType = new ArrayList<>();
+        if (type == "CargoPlane") {
+            for (CargoPlane plane : getAllCargoPlanes()) {
+                planeType.add(plane);
+            }
+        }
+        if (type == "PeoplePlane") {
+            for (PeoplePlane plane : getAllPeoplePlane()) {
+                planeType.add(plane);
+            }
+
+        }
+        return planeType;
     }
 
     public List<PeoplePlane> getSuitablePlane(int numberOfPassenger) {
@@ -67,7 +83,7 @@ public class Airport {
             }
             if (airplane.isCurrentlyFlying() == true & (airplane.getCapacity()) + ton < 20) {
                 System.out.println("Plane " + airplane.getPlaneId() + " loads " + airplane.getCapacity() + " tons of cargo, " +
-                        (20-(airplane.getCapacity() + ton)) + "  fits into the plane..");
+                        (20 - (airplane.getCapacity() + ton)) + "  fits into the plane..");
             }
         }
         return null;
@@ -94,21 +110,22 @@ public class Airport {
             System.out.println(cargoPlane.getPlaneId() + " is not flying.");
 
     }
-    public void WhichAirplanes() {
-        System.out.printf("Passenger planes from airport %s:\n", this.name);
-        for(Airplane airplane:planes){
-            if(airplane instanceof PeoplePlane)
-                System.out.println(airplane.getPlaneId()+"  is People plane");
-            if(airplane instanceof CargoPlane)
-                System.out.println(airplane.getPlaneId()+"  is Cargo plane");
-        }
-    }
 
+    public void WhichAirplanes(String type) {
+        System.out.printf("Passenger planes from airport %s:\n", this.name);
+        if (type == "CargoPlane") ;
+//        for(Airplane airplane:planes){
+//            if(airplane instanceof PeoplePlane)
+//                System.out.println(airplane.getPlaneId()+"  is People plane");
+//            if(airplane instanceof CargoPlane)
+//                System.out.println(airplane.getPlaneId()+"  is Cargo plane");
+//        }
+    }
 
 
 //Getter and Setter Constructor
 
-    public Airport(String name, List<PeoplePlane> airplanes, List<CargoPlane> cargoPlanes,List<Airplane> planes) {
+    public Airport(String name, List<PeoplePlane> airplanes, List<CargoPlane> cargoPlanes, List<Airplane> planes) {
         this.name = name;
         this.airplanes = airplanes;
         this.cargoPlanes = cargoPlanes;

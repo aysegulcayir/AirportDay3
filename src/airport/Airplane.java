@@ -4,6 +4,7 @@ public class Airplane {
     private  String planeId;
     private boolean isCurrentlyFlying;
     private double speed;
+    private String type;
 
 
     public void airplaneTakeOff() {
@@ -41,6 +42,7 @@ public class Airplane {
         this.planeId = planeId;
         this.isCurrentlyFlying = isCurrentlyFlying;
         this.speed = speed;
+
     }
 
     public String getPlaneId() {return planeId;}
@@ -55,5 +57,11 @@ public class Airplane {
 
     public void setSpeed(double speed) {this.speed = speed;}
 
+    public String getType() {
+        return type;
+    }
 
+    public void setType(String type) {
+        this.type = type;
+    }
 }

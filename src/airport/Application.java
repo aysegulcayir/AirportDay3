@@ -24,11 +24,13 @@ public class Application {
 
 
         Airport airport1 = new Airport("Eindhoven", airplanes, cargoPlanes, planes);
-        airport1.getAllAircraft();
+        airport1.getAllPeoplePlane();
         airport1.getAllCargoPlanes();
         airport1.getSuitablePlane(21);
         airport1.getSuitableCargoPlane(25);
-        airport1.WhichAirplanes();//does not work!!!!
+        airport1.typeOfPlane("CargoPlane");
+        System.out.println("....");
+        airport1.WhichAirplanes("CargoPlanes");//does not work!!!!
 
 
 
