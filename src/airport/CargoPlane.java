@@ -19,6 +19,9 @@ public class CargoPlane extends Airplane {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+    public void avarageMeasurement(){
+        System.out.println("400 m is a avarage measurement for a plane");
+    }
 
     public int loadCapacity(int ton) {
         this.capacity = this.getCapacity();

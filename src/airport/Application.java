@@ -27,6 +27,7 @@ public class Application {
 
 
 
+
         System.out.println("Test");
         airplane1.loadPassenger(43);
         airplane1.airplaneTakeOff();
@@ -39,5 +40,54 @@ public class Application {
 
         System.out.println(cargoPlanes.get(0).toString());;
         System.out.println("Test");
+        System.out.println();
+
+        //polymorphism
+        Airplane cargoAirplaneCast = new CargoPlane("FF2134", false, 100, 13);
+        cargoAirplaneCast.avarageMeasurement();
+        System.out.println();
+        //cast
+        Airplane airplaneCast= new PeoplePlane("ABC123", true, 0, 43, 16);
+        System.out.println("CAST");
+        System.out.println("------");
+        System.out.println(airplaneCast.isCurrentlyFlying());
+
+        Airplane par = airplaneCast;
+
+        // Using instanceof to make sure that par
+        // is a valid reference before typecasting
+        if (par instanceof PeoplePlane)
+        {
+            System.out.println("Value accessed through " +
+                    "parent reference with typecasting is " +
+                    ((PeoplePlane)par).getCurrentNumberOfPassengers());
+        }
+
+        System.out.println(" ");
+
+        //instance of
+        for(PeoplePlane airplane:airplanes){
+            if (airplane instanceof PeoplePlane)
+                System.out.println("airplane " +airplane.getPlaneId() +" is instance of PeoplePlane");
+            else
+                System.out.println("airplane " +airplane.getPlaneId() +" is NOT instance of PeoplePlane");
+
+            // instanceof returns true for Parent class also
+            if (airplane instanceof Airplane)
+                System.out.println("airplane " +airplane.getPlaneId() +"  is instance of Airplane");
+            else
+                System.out.println("airplane " +airplane.getPlaneId() +"  is NOT instance of Airplane");
+
+            // instanceof returns true for all ancestors (Note : Object
+            // is ancestor of all classes in Java)
+            if (airplane instanceof Object)
+                System.out.println("airplane " +airplane.getPlaneId() +"  is instance of Object");
+            else
+                System.out.println("airplane " +airplane.getPlaneId() +"  is NOT instance of Object");
+        }
+
     }
 }
+
+
+

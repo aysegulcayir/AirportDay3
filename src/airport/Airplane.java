@@ -5,6 +5,7 @@ public class Airplane {
     private boolean isCurrentlyFlying;
     private double speed;
 
+
     public void airplaneTakeOff() {
         if(this.isCurrentlyFlying==false){
             this.isCurrentlyFlying = true;
@@ -23,6 +24,10 @@ public class Airplane {
         }else{
             System.out.println("Airplane " + this.planeId + " can not land, because we are still on the ground. ");
         }
+    }
+
+    public void avarageMeasurement(){
+        System.out.println("500m is a avarage measurement for a plane");
     }
 
 
