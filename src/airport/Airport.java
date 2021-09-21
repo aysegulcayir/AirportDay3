@@ -8,6 +8,7 @@ public class Airport {
     private String name;
     private List<PeoplePlane> airplanes;
     private List<CargoPlane> cargoPlanes;
+    private List<Airplane> planes;
 
 
     public List<PeoplePlane> getAllAircraft() {
@@ -93,15 +94,26 @@ public class Airport {
             System.out.println(cargoPlane.getPlaneId() + " is not flying.");
 
     }
+    public void WhichAirplanes() {
+        System.out.printf("Passenger planes from airport %s:\n", this.name);
+        for(Airplane airplane:planes){
+            if(airplane instanceof PeoplePlane)
+                System.out.println(airplane.getPlaneId()+"  is People plane");
+            if(airplane instanceof CargoPlane)
+                System.out.println(airplane.getPlaneId()+"  is Cargo plane");
+        }
+    }
 
 
 
 //Getter and Setter Constructor
 
-    public Airport(String name, List<PeoplePlane> airplanes, List<CargoPlane> cargoPlanes) {
+    public Airport(String name, List<PeoplePlane> airplanes, List<CargoPlane> cargoPlanes,List<Airplane> planes) {
         this.name = name;
         this.airplanes = airplanes;
         this.cargoPlanes = cargoPlanes;
+        this.planes = planes;
+
     }
 
     public String getName() {
@@ -120,17 +132,19 @@ public class Airport {
         this.airplanes = airplanes;
     }
 
-//    public String toString() {
+    public List<CargoPlane> getCargoPlanes() {
+        return cargoPlanes;
+    }
 
-//        CargoPlane airplane1 = null;
-        
-//            return "planeId: " + airplane1.getPlaneId() + "status: " + airplane1.isCurrentlyFlying() +
-//                    " speed: " +airplane1.getSpeed() +" capacity: " + airplane1.getCapacity();
-       
-//            return "planeId: " + airplane.getPlaneId() + "status: " + airplane.isCurrentlyFlying() +
-//                    " speed: " +airplane.getSpeed() +" capacity: " + airplane.getMaxNumberOfPassenger()+"current passenger:"+ airplane.getCurrentNumberOfPassengers();
+    public void setCargoPlanes(List<CargoPlane> cargoPlanes) {
+        this.cargoPlanes = cargoPlanes;
+    }
 
-   // }
+    public List<Airplane> getPlanes() {
+        return planes;
+    }
 
-
+    public void setPlanes(List<Airplane> planes) {
+        this.planes = planes;
+    }
 }

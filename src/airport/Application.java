@@ -10,20 +10,25 @@ public class Application {
         PeoplePlane airplane1 = new PeoplePlane("ABC123", true, 0, 43, 100);
         PeoplePlane airplane2 = new PeoplePlane("DDD88", true, 0, 23, 100);
         List<PeoplePlane> airplanes = new ArrayList<>(Arrays.asList(
-                new PeoplePlane("ABC123", true, 0, 33, 5),
+                new PeoplePlane("ABC123", true, 100, 33, 5),
                 new PeoplePlane("DDD88", true, 0, 23, 15),
                 new PeoplePlane("DEAM88", false, 0, 23, 0)));
 
 
         List<CargoPlane> cargoPlanes = new ArrayList<>(Arrays.asList(
-                new CargoPlane("FF2134", false, 100, 13),
+                new CargoPlane("FF2134", false, 0, 13),
                 new CargoPlane("PLA166", false, 100, 13)));
+        List<Airplane> planes = new ArrayList<>(Arrays.asList(
+                new Airplane("ABC123", true, 100),
+                new Airplane("FF2134",false,0)));
 
-        Airport airport1 = new Airport("Eindhoven", airplanes, cargoPlanes);
+
+        Airport airport1 = new Airport("Eindhoven", airplanes, cargoPlanes, planes);
         airport1.getAllAircraft();
         airport1.getAllCargoPlanes();
         airport1.getSuitablePlane(21);
         airport1.getSuitableCargoPlane(25);
+        airport1.WhichAirplanes();//does not work!!!!
 
 
 

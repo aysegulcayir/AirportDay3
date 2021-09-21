@@ -49,7 +49,7 @@ public class CargoPlane extends Airplane {
         return this.capacity;
     }
     public String toString(){
-        return "planeId: " + this.getPlaneId() + "status: " + this.isCurrentlyFlying() +
+        return "planeId: " + this.getPlaneId() + " status: " + this.isCurrentlyFlying() +
                 " speed: " +this.getSpeed() +" capacity: " + this.getCapacity();
     }
 

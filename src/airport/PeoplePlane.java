@@ -52,7 +52,7 @@ public class PeoplePlane extends Airplane{
         }
     }
     public String toString(){
-        return "planeId: " + this.getPlaneId() + "status: " + this.isCurrentlyFlying() +
+        return "planeId: " + this.getPlaneId() + " status: " + this.isCurrentlyFlying() +
                     " speed: " +this.getSpeed() +" capacity: " + this.getMaxNumberOfPassenger()+"current passenger:"+ this.getCurrentNumberOfPassengers();
     }
 
