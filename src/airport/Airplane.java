@@ -37,7 +37,11 @@ public abstract class Airplane {
 
     //Getter Setter constructor
 
-    public Airplane(String planeId,  boolean isCurrentlyFlying, double speed) {
+
+    public Airplane() {
+    }
+
+    public Airplane(String planeId, boolean isCurrentlyFlying, double speed) {
         this.planeId = planeId;
         this.isCurrentlyFlying = isCurrentlyFlying;
         this.speed = speed;
