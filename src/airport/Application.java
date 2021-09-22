@@ -9,6 +9,7 @@ public class Application {
 
         PeoplePlane airplane1 = new PeoplePlane("ABC123", true, 0, 43, 100);
         PeoplePlane airplane2 = new PeoplePlane("DDD88", true, 0, 23, 100);
+
         List<PeoplePlane> airplanes = new ArrayList<>(Arrays.asList(
                 new PeoplePlane("ABC123", true, 100, 33, 5),
                 new PeoplePlane("DDD88", true, 0, 23, 15),
@@ -18,24 +19,29 @@ public class Application {
         List<CargoPlane> cargoPlanes = new ArrayList<>(Arrays.asList(
                 new CargoPlane("FF2134", false, 0, 13),
                 new CargoPlane("PLA166", false, 100, 13)));
-        List<Airplane> planes = new ArrayList<>(Arrays.asList(
-                new Airplane("ABC123", true, 100),
-                new Airplane("FF2134",false,0)));
 
+//        List<Airplane> planes = new ArrayList<>(Arrays.asList(
+//                new Airplane("ABC123", true, 100),
+//                new Airplane("FF2134",false,0)));
+
+        List<Airplane> planes = new ArrayList<>();
 
         Airport airport1 = new Airport("Eindhoven", airplanes, cargoPlanes, planes);
         airport1.getAllPeoplePlane();
         airport1.getAllCargoPlanes();
         airport1.getSuitablePlane(21);
         airport1.getSuitableCargoPlane(25);
+        System.out.println("Cargo Planes");
+        System.out.println("----------------");
         airport1.typeOfPlane("CargoPlane");
+        System.out.println();
+        System.out.println("people planes");
+        System.out.println("----------------");
+        airport1.typeOfPlane("PeoplePlane");
         System.out.println("....");
-        airport1.WhichAirplanes("CargoPlanes");//does not work!!!!
-
-
-
-
-        System.out.println("Test");
+        //airport1.WhichAirplanes("CargoPlanes");//does not work!!!!
+        System.out.println("for day1 and day2 assignment");
+        System.out.println("----------------");
         airplane1.loadPassenger(43);
         airplane1.airplaneTakeOff();
         airplane2.loadPassenger(23);
@@ -44,13 +50,14 @@ public class Application {
         airplane2.airplaneTakeOff();
         airplane2.airplaneLand();
         airplane2.unloadPassenger(23);
-
+        System.out.println("----------------");
+        System.out.println();
         System.out.println(cargoPlanes.get(0).toString());;
-        System.out.println("Test");
         System.out.println();
 
         //polymorphism
         Airplane cargoAirplaneCast = new CargoPlane("FF2134", false, 100, 13);
+        System.out.println("the measurement for the cargoPlane: ");
         cargoAirplaneCast.avarageMeasurement();
         System.out.println();
         //cast
@@ -67,6 +74,7 @@ public class Application {
         {
             System.out.println("Value accessed through " +
                     "parent reference with typecasting is " +
+                    "Current passenger Number of airplaneCast "+
                     ((PeoplePlane)par).getCurrentNumberOfPassengers());
         }
 

@@ -1,11 +1,10 @@
 package airport;
 
-public class Airplane {
+public abstract class Airplane {
     private  String planeId;
     private boolean isCurrentlyFlying;
     private double speed;
     private String type;
-
 
     public void airplaneTakeOff() {
         if(this.isCurrentlyFlying==false){
@@ -14,7 +13,6 @@ public class Airplane {
         }else{
             System.out.println("Airplane " + this.planeId + " can not take off, because we are already flying.");
         }
-
     }
 
     public void airplaneLand() {
@@ -27,6 +25,7 @@ public class Airplane {
         }
     }
 
+    //I wrote this function just an example of override. I use it with CargoPlane ChildClass
     public void avarageMeasurement(){
         System.out.println("500m is a avarage measurement for a plane");
     }

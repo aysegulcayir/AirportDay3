@@ -113,13 +113,14 @@ public class Airport {
 
     public void WhichAirplanes(String type) {
         System.out.printf("Passenger planes from airport %s:\n", this.name);
-        if (type == "CargoPlane") ;
-//        for(Airplane airplane:planes){
-//            if(airplane instanceof PeoplePlane)
-//                System.out.println(airplane.getPlaneId()+"  is People plane");
-//            if(airplane instanceof CargoPlane)
-//                System.out.println(airplane.getPlaneId()+"  is Cargo plane");
-//        }
+
+//It does not enter the for loop. LOOK again!!!!
+        for(Airplane airplane:planes){
+            if(airplane instanceof PeoplePlane)
+                System.out.println(airplane.getPlaneId()+"  is People plane");
+            if(airplane instanceof CargoPlane)
+                System.out.println(airplane.getPlaneId()+"  is Cargo plane");
+        }
     }
 
 
